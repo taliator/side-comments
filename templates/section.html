@@ -1,17 +1,18 @@
 <div class="side-comment <%= sectionClasses %>">
   <a href="#" class="marker">
+    <i class="fa fa-comment"></fa>
     <span><%= comments.length %></span>
   </a>
-  
+
   <div class="comments-wrapper">
     <ul class="comments">
       <% _.each(comments, function( comment ){ %>
         <%= _.template(commentTemplate, { comment: comment, currentUser: currentUser }) %>
       <% }) %>
     </ul>
-    
+
     <a href="#" class="add-comment">Leave a comment</a>
-    
+
     <% if (currentUser){ %>
       <div class="comment-form">
         <div class="author-avatar">
